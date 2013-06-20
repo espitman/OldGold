@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.Bahar-Newspaper"
-        version   = "0.0.411">
+        version   = "0.1.0">
 
-    <name>Bahar Newspaper</name>
+    <name>Gold Price</name>
 
     <description>
-    	Bahar Newspaper mobile application
+    	Gold Price
     </description>
 
     <author href="http://saeedheidari.ir" email="design@saeedheidari.ir">
