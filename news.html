@@ -1,0 +1,64 @@
+<html>
+<head>
+<script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery-1.7.2.min"></script>
+<script type="text/javascript" charset="utf-8" src="js/li-scroller/jquery.li-scroller.1.0.js"></script>
+<link rel="stylesheet" href="js/li-scroller/li-scroller.css" />
+
+<script type="text/javascript">
+	
+function loadTitles() {
+	
+    $.ajax({
+        type: "POST",
+        url: "http://boum.ir/test/proxy.php",
+        dataType: "json",
+        data : {url : "http://api.khabarfarsi.net/api/news/top/1?tid=12&output=json"},
+        async: true,
+        success: function(data) {
+        	for(x in data["items"]) {
+        		
+        		title = data["items"][x]["title"];
+        		text = data["items"][x]["teaser"];
+        		$("#newsBar1 ul").append("<li>"+title+"</li>"); 
+        	}
+        	//var width = $("#newsBar1 ul").width();
+            //$("#newsBar1 .titles .full ul").css({"width": width+"px"});
+            $("ul").liScroll();
+        },
+        error : function (data) {
+        }
+    }); 
+}
+	
+	
+</script>
+<style type="text/css">
+body {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+li {
+	margin-left: 20px;
+	list-style: none;
+	float: right;
+	color: #000;
+	direction: rtl;
+}	
+	
+</style>
+	
+</head>	
+<body onload="loadTitles()">
+	<div id="newsBar1">
+		<ul></ul>		
+	</div>
+
+
+</body>
+	
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=320; user-scalable=no" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Minimal AppLaud App</title>
+
+		<script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery-1.7.2.min"></script>
+		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/rss.js"></script>
+		<script type="text/javascript" src="js/jscharts.js"></script>
+		<script type="text/javascript" src="js/jquery.clock.js"></script>
+		<script type="text/javascript" src="js/persianDate.js"></script>
+		
+		<script src="js/cufon/cufon-1.10.min.js" type="text/javascript" ></script>
+		<script src="js/cufon/bifon-1.1b.min.js" type="text/javascript" ></script>
+		<script src="js/cufon/yekan.js" type="text/javascript" ></script>
+	
+		<script type="text/javascript" charset="utf-8" src="js/li-scroller/jquery.li-scroller.1.0.js"></script>
+		<link rel="stylesheet" href="js/li-scroller/li-scroller.css" />
+		
+		<script type="text/javascript" charset="utf-8" src="js/jfeed.js"></script>
+
+		<script type="text/javascript">
+		Cufon.replace('h1,.price .box div span:nth-child(odd),.price .box div div:nth-child(1),.price .box div span:before,.newsBar .head',{
+			onBeforeReplace:Bifon.convert,
+		});
+		</script>
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<script type="text/javascript" charset="utf-8">
+			var onDeviceReady = function() {
+				document.getElementById("devready").innerHTML = "OnDeviceReady fired.";
+			};
+
+			function init() {
+				document.addEventListener("deviceready", onDeviceReady, true);
+			}
+		</script>
+
+	</head>
+	<body onload="init();" id="stage" class="theme">
+
+		<div id="top">
+			<div class='pdate'>
+						<script>
+							document.write("<h1>" + dayf + " " + roozf + " " + mahf + " " + sal + "</h1>");
+						</script></td>
+			</div>
+			<div class='timers'>
+				<div class='timer'>
+					<h1>تهران</h1>
+					<ul id="tehran-clock" class="digital">
+						<li class="hour"></li>
+						<li class="min"></li>
+						<li class="sec"></li>
+					</ul>
+				</div>
+				<div class='timer'>
+					<h1>لندن</h1>
+					<ul id="london-clock" class="digital">
+						<li class="hour"></li>
+						<li class="min"></li>
+						<li class="sec"></li>
+					</ul>
+				</div>
+				<div class='timer'>
+					<h1>نیویورک</h1>
+					<ul id="newYork-clock" class="digital">
+						<li class="hour"></li>
+						<li class="min"></li>
+						<li class="sec"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="price">
+			<div class="box" id="tala">
+				<script type="text/javascript" src="http://tablotala.com/api/?group=1&style=default"></script>
+			</div>
+		</div>
+
+		<div class="price">
+			<div class="box" id="sekeh">
+				<script type="text/javascript" src="http://tablotala.com/api/?group=2&style=default"></script>
+			</div>
+		</div>
+
+		<div class="price">
+			<div class="box" id="arz">
+				<script type="text/javascript" src="http://tablotala.com/api/?group=4&style=default"></script>
+			</div>
+		</div>
+
+		<div id="graph">
+			<div class="mc">
+				<h1 id="ct1">تغییرات نرخ طلای 18 عیار امروز</h1>
+				<div class="chart" id="chart_container">
+					Loading chart...
+				</div>
+			</div>
+			<div class="mc">
+				<h1 id="ct2">تغییرات نرخ سکه امروز</h1>
+				<div class="chart" id="chart_container2">
+					Loading chart...
+				</div>
+			</div>
+			<div class="mc">
+				<h1 id="ct3">تغییرات نرخ طلای 18 عیار امروز</h1>
+				<div class="chart" id="chart_container3">
+					Loading chart...
+				</div>
+			</div>
+		</div>
+
+		<div class="newsBar" id="newsBar1">
+			<div class="head">
+				اخبار اقتصادی
+			</div>
+			<div class="titles">
+
+				<div class="full">
+					<ul></ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="newsBar" id="newsBar2">
+			<div class="head">
+				اخبار عمومی
+			</div>
+			<div class="titles">
+
+				<div class="full">
+						<ul></ul>
+				</div>
+
+			</div>			
+
+
+		</div>
+
+	</body>
+</html>
